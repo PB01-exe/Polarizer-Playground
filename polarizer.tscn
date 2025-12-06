@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d30vawdnfr7aa"]
+
+[ext_resource type="Script" path="res://polarizer.gd" id="1_kq8ld"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vvy4u"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Polarizer" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_vvy4u")
+script = ExtResource("1_kq8ld")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0r5lvyjyq745"]
+
+[ext_resource type="Script" path="res://dial.gd" id="1_d5nw8"]
+
+[node name="Dial" type="Panel"]
+custom_minimum_size = Vector2(140, 190)
+script = ExtResource("1_d5nw8")
+
+[node name="VSlider" type="VSlider" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 10.0
+offset_right = 82.0
+offset_bottom = 90.0
+max_value = 180.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 120.0
+offset_right = 90.0
+offset_bottom = 144.0
+horizontal_alignment = 1
+
+[connection signal="value_changed" from="VSlider" to="." method="_on_v_slider_value_changed"]

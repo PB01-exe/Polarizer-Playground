@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://djib8gb5tgrou"]
+
+[ext_resource type="Shader" path="res://wave.gdshader" id="1_owjba"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rukgc"]
+render_priority = 0
+shader = ExtResource("1_owjba")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pts2l"]
+material = SubResource("ShaderMaterial_rukgc")
+size = Vector2(2, 0.1)
+subdivide_width = 64
+subdivide_depth = 64
+
+[node name="Wave" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1, 0, 0)
+mesh = SubResource("PlaneMesh_pts2l")
