@@ -14,8 +14,8 @@ func _process(delta):
 func _on_v_slider_value_changed(value):
 	var label = get_node("Label")
 	label.text = str(value)
-	associated_polarizer.angle = value
-	
+	associated_polarizer.set_angle(deg_to_rad(value))
+
+
 func attach_polarizer(polarizer):
 	associated_polarizer = polarizer
-	associated_polarizer.angle = 0

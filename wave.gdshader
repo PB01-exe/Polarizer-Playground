@@ -1,10 +1,12 @@
 shader_type spatial;
+render_mode cull_disabled;
 const float SPEED = 0.50;
 const float K = 2.0*PI;
 const float A = 0.25;
+uniform float scale = 1.0;
 
 void vertex() {
-	VERTEX.z += A*sin(K*(VERTEX.x-SPEED*TIME));
+	VERTEX.z += scale*A*sin(K*(VERTEX.x-SPEED*TIME));
 }
 
 

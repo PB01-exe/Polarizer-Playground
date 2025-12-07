@@ -9,6 +9,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("D"):
-		position.x += sensitivity
+		position.x += sign(position.z)*sensitivity
 	if Input.is_action_pressed("A"):
-		position.x -= sensitivity
+		position.x -= sign(position.z)*sensitivity
+		
+func _input(event):
+	if event.is_action_pressed("Ctrl"):
+		position.z *= -1
+		rotation.y = PI-rotation.y

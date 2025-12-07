@@ -3,10 +3,13 @@
 [ext_resource type="Shader" path="res://wave.gdshader" id="1_owjba"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rukgc"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_owjba")
+shader_parameter/scale = 1.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pts2l"]
+resource_local_to_scene = true
 material = SubResource("ShaderMaterial_rukgc")
 size = Vector2(2, 0.1)
 subdivide_width = 64
