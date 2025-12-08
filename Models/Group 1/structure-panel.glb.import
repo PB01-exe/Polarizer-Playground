@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d23alulhpiksu"
-path="res://.godot/imported/floor.glb-89750d950ab1901e078084beb8a8b767.scn"
+uid="uid://n1gcig5mma71"
+path="res://.godot/imported/structure-panel.glb-2d944fb22529d60b293c167d19d74bd4.scn"
 
 [deps]
 
-source_file="res://Models/floor.glb"
-dest_files=["res://.godot/imported/floor.glb-89750d950ab1901e078084beb8a8b767.scn"]
+source_file="res://Models/Group 1/structure-panel.glb"
+dest_files=["res://.godot/imported/structure-panel.glb-2d944fb22529d60b293c167d19d74bd4.scn"]
 
 [params]
 
@@ -31,13 +31,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"colormap": {
-"use_external/enabled": true,
-"use_external/path": "res://Models/Material Resources/floor_colormap.tres"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

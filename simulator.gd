@@ -50,7 +50,7 @@ func update_laser_path():
 		for i in range(positions.size()-1):
 			var amplitude_ratio = abs(cos(abs(angles[i] - angle)))
 			
-			if amplitude_ratio <= 0.01:
+			if amplitude_ratio <= 0.1:
 				break
 			
 			var new_wave = create_wave(positions[i], positions[i+1], angles[i], amplitude*amplitude_ratio)
@@ -73,7 +73,7 @@ func create_wave(start, end, angle, amplitude=1):
 
 func add_polarizer():
 	var new_polarizer = polarizer_scene.instantiate()
-	new_polarizer.setup((polarizers.size()+1)*distance_between_polarizers, 0, self)
+	new_polarizer.setup((polarizers.size()+1)*distance_between_polarizers+laser.position.x, 0, self)
 	
 	polarizers.append(new_polarizer)
 	add_child(new_polarizer)

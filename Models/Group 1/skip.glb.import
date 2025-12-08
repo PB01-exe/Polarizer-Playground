@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b0p5523ya7bmb"
-path="res://.godot/imported/wall-corner.glb-6741fb9973c6180581221c28cb1b91a9.scn"
+uid="uid://jpxdxi5sgxbk"
+path="res://.godot/imported/skip.glb-56994671c285e7aea7112bec42dd78ed.scn"
 
 [deps]
 
-source_file="res://Models/wall-corner.glb"
-dest_files=["res://.godot/imported/wall-corner.glb-6741fb9973c6180581221c28cb1b91a9.scn"]
+source_file="res://Models/Group 1/skip.glb"
+dest_files=["res://.godot/imported/skip.glb-56994671c285e7aea7112bec42dd78ed.scn"]
 
 [params]
 

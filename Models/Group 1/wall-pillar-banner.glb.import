@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://chckap7onpws4"
-path="res://.godot/imported/blaster-b.glb-e2decbd5418c99a453d6ad482b0d352a.scn"
+uid="uid://ttdfiwy1r1ih"
+path="res://.godot/imported/wall-pillar-banner.glb-e97699c35f5e10384e5c8ced4d70cce3.scn"
 
 [deps]
 
-source_file="res://Models/blaster-b.glb"
-dest_files=["res://.godot/imported/blaster-b.glb-e2decbd5418c99a453d6ad482b0d352a.scn"]
+source_file="res://Models/Group 1/wall-pillar-banner.glb"
+dest_files=["res://.godot/imported/wall-pillar-banner.glb-e97699c35f5e10384e5c8ced4d70cce3.scn"]
 
 [params]
 

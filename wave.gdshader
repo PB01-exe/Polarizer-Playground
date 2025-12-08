@@ -2,20 +2,14 @@ shader_type spatial;
 render_mode cull_disabled;
 const float SPEED = 0.50;
 const float K = 2.0*PI;
-const float A = 0.25;
+const float A = 0.20;
+const vec3 C = vec3(196.0, 73.0, 57.0);
 uniform float scale = 1.0;
 
 void vertex() {
 	VERTEX.z += scale*A*sin(K*(VERTEX.x-SPEED*TIME));
 }
 
-
-
 void fragment() {
-	// Called for every pixel the material is visible on.
+	ALBEDO = C/255.0;
 }
-
-//void light() {
-	// Called for every pixel for every light affecting the material.
-	// Uncomment to replace the default light processing function with this one.
-//}

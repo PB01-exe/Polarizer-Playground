@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://jh6g3ebfxoqd"]
+
+[resource]
+resource_name = "metal"
+albedo_color = Color(0.9276, 0.940805, 0.959256, 1)
+backlight = Color(1, 1, 1, 1)
+refraction_scale = -0.75

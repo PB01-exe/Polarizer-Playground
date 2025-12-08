@@ -1,10 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://d30vawdnfr7aa"]
+[gd_scene load_steps=6 format=3 uid="uid://d30vawdnfr7aa"]
 
+[ext_resource type="PackedScene" uid="uid://b743rgu7jee40" path="res://Models/Group 4/pipe_ringSupport.glb" id="1_h0ydq"]
 [ext_resource type="Script" path="res://polarizer.gd" id="1_kq8ld"]
+[ext_resource type="PackedScene" uid="uid://3d36vivbsw16" path="res://Models/Other/Hexagon_2.gltf" id="2_4o23f"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_vvy4u"]
-size = Vector3(0.5, 0.5, 0.5)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s3gd"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.705882)
 
-[node name="Polarizer" type="MeshInstance3D"]
-mesh = SubResource("BoxMesh_vvy4u")
+[sub_resource type="CylinderMesh" id="CylinderMesh_m4308"]
+material = SubResource("StandardMaterial3D_7s3gd")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.1
+
+[node name="Polarizer" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 1.42, 0)
 script = ExtResource("1_kq8ld")
+
+[node name="pipe_ringSupport2" parent="." instance=ExtResource("1_h0ydq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, -2, -0.9, -0.75)
+
+[node name="rim" parent="." instance=ExtResource("2_4o23f")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.99, 0, 0, 0)
+
+[node name="screen" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_m4308")

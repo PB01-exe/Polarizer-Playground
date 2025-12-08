@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bfcps6iw0hno8"
-path="res://.godot/imported/wall-banner.glb-ec05b45d3c7212ac68a00b561b4a230e.scn"
+uid="uid://b743rgu7jee40"
+path="res://.godot/imported/pipe_ringSupport.glb-c317035ef2987f7240bf6beb80a4c7ba.scn"
 
 [deps]
 
-source_file="res://Models/wall-banner.glb"
-dest_files=["res://.godot/imported/wall-banner.glb-ec05b45d3c7212ac68a00b561b4a230e.scn"]
+source_file="res://Models/Group 4/pipe_ringSupport.glb"
+dest_files=["res://.godot/imported/pipe_ringSupport.glb-c317035ef2987f7240bf6beb80a4c7ba.scn"]
 
 [params]
 
@@ -31,6 +31,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Group 4/Materials/metal.tres"
+},
+"metalRed": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Group 4/Materials/metalRed.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
