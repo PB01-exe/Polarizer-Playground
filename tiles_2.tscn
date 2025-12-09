@@ -1,0 +1,51 @@
+[gd_scene load_steps=13 format=3 uid="uid://c2qd1xbh8xo7n"]
+
+[ext_resource type="PackedScene" uid="uid://u4lxpi6vk6jg" path="res://Models/Group 1/wall.glb" id="1_ec5us"]
+[ext_resource type="PackedScene" uid="uid://bjo3hfrfeb2iy" path="res://Models/Group 1/wall-pillar.glb" id="2_lpu43"]
+[ext_resource type="PackedScene" uid="uid://ttdfiwy1r1ih" path="res://Models/Group 1/wall-pillar-banner.glb" id="3_i1672"]
+[ext_resource type="PackedScene" uid="uid://bccsuutjxdv12" path="res://Models/Group 1/wall-door.glb" id="4_6kte6"]
+[ext_resource type="PackedScene" uid="uid://dka2nhp5agp46" path="res://Models/Group 1/wall-door-banner.glb" id="5_s6jf3"]
+[ext_resource type="PackedScene" uid="uid://bhi810os21ic2" path="res://Models/Group 1/wall-corner.glb" id="6_ob60f"]
+[ext_resource type="PackedScene" uid="uid://dpbh2wo8kro3v" path="res://Models/Group 1/wall-corner-banner.glb" id="7_5gewk"]
+[ext_resource type="PackedScene" uid="uid://tfxp8okoowbj" path="res://Models/Group 1/wall-banner.glb" id="8_ngvor"]
+[ext_resource type="PackedScene" uid="uid://cenmfkmxvxbh8" path="res://Models/Group 1/wall-door-wide-banner.glb" id="9_b2k72"]
+[ext_resource type="PackedScene" uid="uid://cnr7ekg3p3nok" path="res://Models/Group 1/wall-door-wide.glb" id="10_v8bys"]
+[ext_resource type="PackedScene" uid="uid://w57416yfi5hu" path="res://Models/Group 1/stairs.glb" id="11_v7wry"]
+[ext_resource type="PackedScene" uid="uid://bikpyd5awjo8o" path="res://Models/Group 1/stairs-small-edges.glb" id="12_cw0ou"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="wall2" parent="." instance=ExtResource("1_ec5us")]
+
+[node name="wall-pillar2" parent="." instance=ExtResource("2_lpu43")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="wall-pillar-banner2" parent="." instance=ExtResource("3_i1672")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="wall-door2" parent="." instance=ExtResource("4_6kte6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="wall-door-banner2" parent="." instance=ExtResource("5_s6jf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="wall-corner2" parent="." instance=ExtResource("6_ob60f")]
+transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -5, 0, 0)
+
+[node name="wall-corner-banner2" parent="." instance=ExtResource("7_5gewk")]
+transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6, 0, 0)
+
+[node name="wall-banner2" parent="." instance=ExtResource("8_ngvor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="wall-door-wide-banner2" parent="." instance=ExtResource("9_b2k72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="wall-door-wide2" parent="." instance=ExtResource("10_v8bys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="stairs2" parent="." instance=ExtResource("11_v7wry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="stairs-small-edges2" parent="." instance=ExtResource("12_cw0ou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)

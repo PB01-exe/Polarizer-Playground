@@ -1,5 +1,6 @@
 extends Node
 const distance_between_polarizers = 2
+var polarizer_tracker = 0
 var polarizers = []
 var waves = []
 var polarizer_scene
@@ -7,16 +8,16 @@ var dial_scene
 var wave_scene
 var laser
 var analyzer
-var ui
+var polarizer_ui
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	polarizer_scene = load("res://polarizer.tscn")
-	dial_scene = load("res://dial.tscn")
-	wave_scene = load("res://wave.tscn")
+	polarizer_scene = load("res://Scenes/polarizer.tscn")
+	dial_scene = load("res://Scenes/angle_control.tscn")
+	wave_scene = load("res://Scenes/wave.tscn")
 	laser = get_node("Laser")
 	analyzer = get_node("Analyzer")
-	ui = get_node("UI/PolarizerControls")
+	polarizer_ui = get_node("UI/PolarizerControls/Panel/Margin/VBox")
 	
 	update_laser_path()
 
@@ -72,6 +73,8 @@ func create_wave(start, end, angle, amplitude=1):
 
 
 func add_polarizer():
+	polarizer_tracker += 1
+	
 	var new_polarizer = polarizer_scene.instantiate()
 	new_polarizer.setup((polarizers.size()+1)*distance_between_polarizers+laser.position.x, 0, self)
 	
@@ -80,8 +83,9 @@ func add_polarizer():
 	
 	var new_dial = dial_scene.instantiate()
 	new_dial.attach_polarizer(new_polarizer)
+	new_dial.set_number(polarizer_tracker)
 	
-	ui.add_child(new_dial)
+	polarizer_ui.add_child(new_dial)
 	
 	var analyzer_node = get_node("Analyzer")
 	analyzer_node.position.x += distance_between_polarizers

@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cs4nunof204na"]
+
+[ext_resource type="Texture2D" uid="uid://1qbg7i7v07bq" path="res://bar_round_small_square.svg" id="1_d5hco"]
+[ext_resource type="StyleBox" uid="uid://dcmdbhnoktkpd" path="res://polarizer_panel.tres" id="1_few6y"]
+[ext_resource type="Texture2D" uid="uid://cq8ab7xrmo858" path="res://bar_round_gloss_small_square.svg" id="2_4d78y"]
+[ext_resource type="StyleBox" uid="uid://cta7khcvm7xro" path="res://slider_grabber_area.tres" id="3_woteu"]
+[ext_resource type="StyleBox" uid="uid://cwpxr8xo6ookr" path="res://slider_grabber_area_highlight.tres" id="4_7x3n5"]
+[ext_resource type="StyleBox" uid="uid://dwqdfnpubld8l" path="res://slider.tres" id="5_qtij3"]
+[ext_resource type="FontFile" uid="uid://csrmj3fbd0wmq" path="res://Kenney Future Narrow.ttf" id="7_4pkk6"]
+[ext_resource type="Texture2D" uid="uid://bpct51dbxrl2m" path="res://panel_rectangle_screws.svg" id="7_ox2iw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvr8x"]
+texture = ExtResource("7_ox2iw")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+default_font = ExtResource("7_4pkk6")
+HSlider/icons/grabber = ExtResource("1_d5hco")
+HSlider/icons/grabber_disabled = ExtResource("1_d5hco")
+HSlider/icons/grabber_highlight = ExtResource("2_4d78y")
+HSlider/styles/grabber_area = ExtResource("3_woteu")
+HSlider/styles/grabber_area_highlight = ExtResource("4_7x3n5")
+HSlider/styles/slider = ExtResource("5_qtij3")
+Label/font_sizes/font_size = 19
+Panel1/base_type = &"Panel"
+Panel1/styles/panel = ExtResource("1_few6y")
+Panel2/base_type = &"Panel"
+Panel2/styles/panel = SubResource("StyleBoxTexture_nvr8x")
+PanelContainer/styles/panel = ExtResource("1_few6y")

@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dcmdbhnoktkpd"]
+
+[ext_resource type="Texture2D" uid="uid://dhilbm8q0umum" path="res://button_square_header_blade_square_screws.svg" id="1_p6apv"]
+
+[resource]
+texture = ExtResource("1_p6apv")
+texture_margin_left = 20.0
+texture_margin_top = 40.0
+texture_margin_right = 45.0
+texture_margin_bottom = 25.0
+modulate_color = Color(0.91664, 0.91664, 0.91664, 1)

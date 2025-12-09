@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce7r2yetuevi0"]
+
+[ext_resource type="Script" path="res://Scripts/angle_control.gd" id="1_pv86o"]
+[ext_resource type="Theme" uid="uid://cs4nunof204na" path="res://theme.tres" id="1_xl2vr"]
+[ext_resource type="Texture2D" uid="uid://cu88xiwersq77" path="res://panel_glass_notches.svg" id="2_m5wpi"]
+
+[node name="AngleControl" type="Control"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pv86o")
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 28.0
+offset_right = 277.0
+offset_bottom = 51.0
+theme_override_constants/grabber_offset = 0
+max_value = 180.0
+tick_count = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 2.0
+offset_right = 392.0
+offset_bottom = 45.0
+theme = ExtResource("1_xl2vr")
+theme_type_variation = &"Panel2"
+
+[node name="Hexagon" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 342.0
+offset_bottom = 68.0
+scale = Vector2(0.7, 0.7)
+mouse_filter = 2
+texture = ExtResource("2_m5wpi")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 14.0
+offset_right = 380.0
+offset_bottom = 36.0
+text = "180°"
+horizontal_alignment = 1
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 39.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 3.0
+offset_right = 274.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
+text = "Polarizer Angle"
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]

@@ -1,0 +1,195 @@
+[gd_scene load_steps=16 format=3 uid="uid://de2qgiuqykmrj"]
+
+[ext_resource type="Script" path="res://Scripts/simulator.gd" id="1_wq7ee"]
+[ext_resource type="PackedScene" uid="uid://dpwftr2e0hknp" path="res://Models/Group 2/blaster-b.glb" id="2_0hk3a"]
+[ext_resource type="PackedScene" uid="uid://jpxdxi5sgxbk" path="res://Models/Group 1/skip.glb" id="3_7wu4i"]
+[ext_resource type="PackedScene" uid="uid://n1gcig5mma71" path="res://Models/Group 1/structure-panel.glb" id="4_lf871"]
+[ext_resource type="PackedScene" uid="uid://b6r3vo7grqdkc" path="res://Models/Group 4/gate_complex.glb" id="5_fahvw"]
+[ext_resource type="PackedScene" uid="uid://dxdjahpjaje8t" path="res://Models/Group 1/table-inset.glb" id="6_burto"]
+[ext_resource type="PackedScene" uid="uid://dcsqo5ksygmr0" path="res://Models/Other/Hexagon_1.gltf" id="7_dbl7b"]
+[ext_resource type="Script" path="res://Scripts/camera_3d.gd" id="8_g2vok"]
+[ext_resource type="MeshLibrary" uid="uid://0tvtc31wrmh" path="res://MeshLibraries/floor_library.tres" id="9_yyidw"]
+[ext_resource type="MeshLibrary" uid="uid://chjl1n4ykjlut" path="res://MeshLibraries/wall_library.tres" id="10_qp0jn"]
+[ext_resource type="PackedScene" uid="uid://bikpyd5awjo8o" path="res://Models/Group 1/stairs-small-edges.glb" id="11_xtu3a"]
+[ext_resource type="Theme" uid="uid://cs4nunof204na" path="res://theme.tres" id="12_fy4ia"]
+
+[sub_resource type="Environment" id="Environment_6hdua"]
+adjustment_enabled = true
+adjustment_saturation = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s3gd"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.705882)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m4308"]
+material = SubResource("StandardMaterial3D_7s3gd")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.1
+
+[node name="Simulator" type="Node"]
+script = ExtResource("1_wq7ee")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6hdua")
+
+[node name="Laser" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.42, 0)
+
+[node name="blaster-b2" parent="Laser" instance=ExtResource("2_0hk3a")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -0.775, -0.04, 0)
+
+[node name="skip2" parent="Laser" instance=ExtResource("3_7wu4i")]
+transform = Transform3D(3.27835e-08, 5.6102e-15, -0.65, 1.13247e-07, -0.85, -3.67052e-22, -0.75, -1.28346e-07, -2.84124e-08, -1, -0.4, 0)
+
+[node name="structure-panel2" parent="Laser" instance=ExtResource("4_lf871")]
+transform = Transform3D(1.45, 0, 0, 0, 1, 0, 0, 0, 1.45, -1, -0.9, 0)
+
+[node name="Analyzer" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 1.42, 0)
+
+[node name="gate_complex2" parent="Analyzer" instance=ExtResource("5_fahvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.575, -1.5)
+
+[node name="table-inset2" parent="Analyzer" instance=ExtResource("6_burto")]
+transform = Transform3D(0.8, 0, 0, 0, 0.75, 0, 0, 0, 1.1, -2.42203e-10, -0.581103, -0.00554097)
+
+[node name="structure-panel2" parent="Analyzer" instance=ExtResource("4_lf871")]
+transform = Transform3D(1.45, 0, 0, 0, 1, 0, 0, 0, 1.45, 0, -0.89964, 0)
+
+[node name="rim" parent="Analyzer" instance=ExtResource("7_dbl7b")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.99, 0, 0, 0)
+
+[node name="screen" type="MeshInstance3D" parent="Analyzer"]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_m4308")
+
+[node name="Overhead Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Light 1" type="OmniLight3D" parent="Overhead Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+light_energy = 0.5
+omni_range = 6.0
+omni_attenuation = 0.0
+
+[node name="Light 2" type="OmniLight3D" parent="Overhead Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1.5)
+light_energy = 0.5
+omni_range = 6.0
+omni_attenuation = 0.0
+
+[node name="Light 3" type="OmniLight3D" parent="Overhead Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 1.5)
+light_energy = 0.5
+omni_range = 6.0
+omni_attenuation = 0.0
+
+[node name="Light 4" type="OmniLight3D" parent="Overhead Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+light_energy = 0.5
+omni_range = 6.0
+omni_attenuation = 0.0
+
+[node name="Light 5" type="OmniLight3D" parent="Overhead Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1.5)
+light_energy = 0.5
+omni_range = 6.0
+omni_attenuation = 0.0
+
+[node name="Light 6" type="OmniLight3D" parent="Overhead Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -1.5)
+light_energy = 0.5
+omni_range = 6.0
+omni_attenuation = 0.0
+
+[node name="Stairs" type="Node3D" parent="."]
+
+[node name="Stairs 1" parent="Stairs" instance=ExtResource("11_xtu3a")]
+transform = Transform3D(-3.49691e-08, 0, 1, 0, 1, 0, -0.8, 0, -4.37114e-08, -4.25, 0.5, 0)
+
+[node name="stairs-small-edges2" parent="Stairs/Stairs 1" instance=ExtResource("11_xtu3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.3)
+
+[node name="Stairs 2" parent="Stairs" instance=ExtResource("11_xtu3a")]
+transform = Transform3D(-0.8, 0, -8.74228e-08, 0, 1, 0, 6.99382e-08, 0, -1, 2, 0.5, 2.25)
+
+[node name="stairs-small-edges2" parent="Stairs/Stairs 2" instance=ExtResource("11_xtu3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.3)
+
+[node name="Stairs 3" parent="Stairs" instance=ExtResource("11_xtu3a")]
+transform = Transform3D(0.8, 0, 1.74846e-07, 0, 1, 0, -1.39876e-07, 0, 1, 2, 0.5, -2.25)
+
+[node name="stairs-small-edges2" parent="Stairs/Stairs 3" instance=ExtResource("11_xtu3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.3)
+
+[node name="Floor" type="GridMap" parent="."]
+mesh_library = ExtResource("9_yyidw")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 2, 65535, 0, 1, 65535, 0, 0, 65535, 0, 3, 65535, 0, 3, 0, 0, 65535, 65535, 0, 65535, 0, 0, 65534, 65535, 0, 65534, 0, 0, 65533, 65535, 0, 65533, 0, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 65534, 0, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 65535, 0, 4, 65534, 0, 4, 0, 0, 4, 1, 0, 5, 65534, 0, 5, 65535, 0, 5, 0, 0, 5, 1, 0, 6, 65534, 0, 6, 65535, 0, 6, 0, 0, 6, 1, 0, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 8, 65534, 0, 8, 65535, 0, 8, 0, 0, 8, 1, 0, 9, 65534, 0, 9, 65535, 0, 9, 0, 0, 9, 1, 0, 10, 65534, 0, 10, 65535, 0, 10, 0, 0, 10, 1, 0, 11, 65534, 0, 11, 65535, 0, 11, 0, 0, 11, 1, 0, 12, 65534, 0, 12, 65535, 0, 12, 0, 0, 12, 1, 0, 13, 65534, 0, 13, 65535, 0, 13, 0, 0, 13, 1, 0, 65531, 0, 0, 65531, 65535, 0, 1, 2, 0, 2, 2, 0, 2, 65533, 0, 1, 65533, 0)
+}
+
+[node name="Walls" type="GridMap" parent="."]
+mesh_library = ExtResource("10_qp0jn")
+cell_size = Vector3(0.25, 1, 0.25)
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65521, 7, 6, 65524, 8, 7, 65532, 8, 7, 65520, 65532, 1441799, 65520, 4, 1441799, 65528, 8, 7, 0, 8, 2, 4, 8, 7, 12, 8, 7, 16, 8, 2, 20, 8, 7, 24, 8, 7, 28, 8, 7, 32, 8, 2, 65521, 65529, 1441798, 65524, 65528, 7, 65528, 65528, 7, 65532, 65528, 7, 0, 65528, 2, 4, 65528, 7, 12, 65528, 7, 16, 65528, 2, 20, 65528, 7, 24, 65528, 7, 28, 65528, 7, 32, 65528, 2, 65520, 0, 1441800, 8, 65528, 655368, 8, 8, 655368)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.766045, -0.413176, 0.492404, 0, 0.766044, 0.642788, -0.642787, -0.492404, 0.586824, 2, 4, 2)
+fov = 45.0
+script = ExtResource("8_g2vok")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Add Polarizer" type="Button" parent="UI"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Add Polarizer"
+
+[node name="PolarizerControls" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 824.0
+offset_right = 864.0
+offset_bottom = 40.0
+theme = ExtResource("12_fy4ia")
+
+[node name="Panel" type="PanelContainer" parent="UI/PolarizerControls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.421
+anchor_bottom = 0.447
+offset_right = 437.16
+offset_bottom = 102.12
+theme_type_variation = &"Panel1"
+
+[node name="Margin" type="MarginContainer" parent="UI/PolarizerControls/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -15
+
+[node name="VBox" type="VBoxContainer" parent="UI/PolarizerControls/Panel/Margin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PolarizerControls"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 5.0
+offset_right = 353.0
+offset_bottom = 28.0
+text = "POLARIZER CONTROL PANEL"
+
+[connection signal="pressed" from="UI/Add Polarizer" to="." method="add_polarizer"]

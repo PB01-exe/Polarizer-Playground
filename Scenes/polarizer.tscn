@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d30vawdnfr7aa"]
 
 [ext_resource type="PackedScene" uid="uid://b743rgu7jee40" path="res://Models/Group 4/pipe_ringSupport.glb" id="1_h0ydq"]
-[ext_resource type="Script" path="res://polarizer.gd" id="1_kq8ld"]
+[ext_resource type="Script" path="res://Scripts/polarizer.gd" id="1_kq8ld"]
 [ext_resource type="PackedScene" uid="uid://3d36vivbsw16" path="res://Models/Other/Hexagon_2.gltf" id="2_4o23f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s3gd"]

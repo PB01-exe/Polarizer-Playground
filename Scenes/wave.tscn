@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://djib8gb5tgrou"]
 
-[ext_resource type="Shader" path="res://wave.gdshader" id="1_owjba"]
+[ext_resource type="Shader" path="res://Shaders/wave.gdshader" id="1_owjba"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rukgc"]
 resource_local_to_scene = true

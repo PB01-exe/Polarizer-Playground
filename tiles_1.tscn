@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://6o42cw062mhg"]
+
+[ext_resource type="PackedScene" uid="uid://cq0rokahlyono" path="res://Models/Group 3/floor_checkered.glb" id="1_p53dw"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="floor2" parent="." instance=ExtResource("1_p53dw")]

@@ -1,21 +1,26 @@
-extends Panel
+extends Control
 var associated_polarizer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var label = get_node("Label")
-	label.text = "0"
+	label.text = "0°"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 
-func _on_v_slider_value_changed(value):
+func _on_h_slider_value_changed(value):
 	var label = get_node("Label")
-	label.text = str(value)
+	label.text = str(value) + "°"
 	associated_polarizer.set_angle(deg_to_rad(value))
 
 
 func attach_polarizer(polarizer):
 	associated_polarizer = polarizer
+	
+	
+func set_number(value):
+	var number_label = get_node("Number")
+	number_label.text = str(value)
