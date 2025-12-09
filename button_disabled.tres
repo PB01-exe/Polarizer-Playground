@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cu6vtfjc5hn7n"]
+
+[ext_resource type="Texture2D" uid="uid://urm11syjjiax" path="res://button_rectangle_depth.svg" id="1_85wgr"]
+
+[resource]
+texture = ExtResource("1_85wgr")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.917647, 0.917647, 0.917647, 1)

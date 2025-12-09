@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmd2jrnll8myh"
-path="res://.godot/imported/bar_round_small.svg-ffd0a6cd2fcd529b6ecc2f5a3e870dfc.ctex"
+uid="uid://1qbg7i7v07bq"
+path="res://.godot/imported/bar_round_small_square_red.svg-21eb3a9723c4b1e03c35c1a04a548ad7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bar_round_small.svg"
-dest_files=["res://.godot/imported/bar_round_small.svg-ffd0a6cd2fcd529b6ecc2f5a3e870dfc.ctex"]
+source_file="res://bar_round_small_square_red.svg"
+dest_files=["res://.godot/imported/bar_round_small_square_red.svg-21eb3a9723c4b1e03c35c1a04a548ad7.ctex"]
 
 [params]
 

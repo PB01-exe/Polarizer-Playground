@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq8ab7xrmo858"
-path="res://.godot/imported/bar_round_gloss_small_square.svg-f0c1949410c52cd6219a22dfc688fc30.ctex"
+uid="uid://c3ofblw37j0ym"
+path="res://.godot/imported/button_square_header_blade_square_screws_yellow.svg-7b9d0586479029c1df641da696571a0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bar_round_gloss_small_square.svg"
-dest_files=["res://.godot/imported/bar_round_gloss_small_square.svg-f0c1949410c52cd6219a22dfc688fc30.ctex"]
+source_file="res://button_square_header_blade_square_screws_yellow.svg"
+dest_files=["res://.godot/imported/button_square_header_blade_square_screws_yellow.svg-7b9d0586479029c1df641da696571a0d.ctex"]
 
 [params]
 

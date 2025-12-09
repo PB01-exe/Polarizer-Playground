@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1qbg7i7v07bq"
-path="res://.godot/imported/bar_round_small_square.svg-7a20be077ff93fe3b8e78f34df2a1041.ctex"
+uid="uid://cyyp67eknmc1k"
+path="res://.godot/imported/button_rectangle.svg-dafd785a2005e0e4ca0a137b99c9e213.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bar_round_small_square.svg"
-dest_files=["res://.godot/imported/bar_round_small_square.svg-7a20be077ff93fe3b8e78f34df2a1041.ctex"]
+source_file="res://button_rectangle.svg"
+dest_files=["res://.godot/imported/button_rectangle.svg-dafd785a2005e0e4ca0a137b99c9e213.ctex"]
 
 [params]
 

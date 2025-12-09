@@ -1,5 +1,6 @@
 extends Node3D
 var angle
+var associated_dial
 var simulator
 
 # Called when the node enters the scene tree for the first time.

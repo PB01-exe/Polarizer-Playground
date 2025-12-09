@@ -1,32 +1,48 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cs4nunof204na"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://cs4nunof204na"]
 
-[ext_resource type="Texture2D" uid="uid://1qbg7i7v07bq" path="res://bar_round_small_square.svg" id="1_d5hco"]
-[ext_resource type="StyleBox" uid="uid://dcmdbhnoktkpd" path="res://polarizer_panel.tres" id="1_few6y"]
-[ext_resource type="Texture2D" uid="uid://cq8ab7xrmo858" path="res://bar_round_gloss_small_square.svg" id="2_4d78y"]
-[ext_resource type="StyleBox" uid="uid://cta7khcvm7xro" path="res://slider_grabber_area.tres" id="3_woteu"]
-[ext_resource type="StyleBox" uid="uid://cwpxr8xo6ookr" path="res://slider_grabber_area_highlight.tres" id="4_7x3n5"]
+[ext_resource type="StyleBox" uid="uid://cu6vtfjc5hn7n" path="res://button_disabled.tres" id="1_gkxkx"]
+[ext_resource type="StyleBox" uid="uid://dhq4hflcippsk" path="res://button_pressed.tres" id="2_bjtwk"]
+[ext_resource type="Texture2D" uid="uid://1qbg7i7v07bq" path="res://bar_round_small_square_red.svg" id="3_mescc"]
+[ext_resource type="Texture2D" uid="uid://cq8ab7xrmo858" path="res://bar_round_gloss_small_square_red.svg" id="4_2ucx7"]
+[ext_resource type="StyleBox" uid="uid://cta7khcvm7xro" path="res://slider_grabber_area_red.tres" id="5_c617u"]
 [ext_resource type="StyleBox" uid="uid://dwqdfnpubld8l" path="res://slider.tres" id="5_qtij3"]
+[ext_resource type="StyleBox" uid="uid://cwpxr8xo6ookr" path="res://slider_grabber_area_highlight_red.tres" id="6_ypj27"]
 [ext_resource type="FontFile" uid="uid://csrmj3fbd0wmq" path="res://Kenney Future Narrow.ttf" id="7_4pkk6"]
-[ext_resource type="Texture2D" uid="uid://bpct51dbxrl2m" path="res://panel_rectangle_screws.svg" id="7_ox2iw"]
+[ext_resource type="StyleBox" uid="uid://dcmdbhnoktkpd" path="res://panel_1.tres" id="7_yql1f"]
+[ext_resource type="Texture2D" uid="uid://csey6e2l7505f" path="res://bar_round_small_square_yellow.svg" id="8_403hh"]
+[ext_resource type="Texture2D" uid="uid://brh6svwfec7bm" path="res://bar_round_gloss_small_square_yellow.svg" id="9_lq8pv"]
+[ext_resource type="StyleBox" uid="uid://ceor7jhossmpk" path="res://panel_2.tres" id="9_vahsb"]
+[ext_resource type="StyleBox" uid="uid://c1h3so2nmekna" path="res://panel_3.tres" id="10_aq0ev"]
+[ext_resource type="StyleBox" uid="uid://cqqqiadxbofj6" path="res://slider_grabber_area_yellow.tres" id="10_gccuq"]
+[ext_resource type="StyleBox" uid="uid://bpnfkudhrm01a" path="res://slider_grabber_area_highlight_yellow.tres" id="11_icrlj"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvr8x"]
-texture = ExtResource("7_ox2iw")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mnu5m"]
 
 [resource]
 default_font = ExtResource("7_4pkk6")
-HSlider/icons/grabber = ExtResource("1_d5hco")
-HSlider/icons/grabber_disabled = ExtResource("1_d5hco")
-HSlider/icons/grabber_highlight = ExtResource("2_4d78y")
-HSlider/styles/grabber_area = ExtResource("3_woteu")
-HSlider/styles/grabber_area_highlight = ExtResource("4_7x3n5")
+Button/styles/disabled = ExtResource("1_gkxkx")
+Button/styles/focus = SubResource("StyleBoxEmpty_mnu5m")
+Button/styles/hover = ExtResource("2_bjtwk")
+Button/styles/normal = ExtResource("1_gkxkx")
+Button/styles/pressed = ExtResource("2_bjtwk")
+HSlider/icons/grabber = ExtResource("3_mescc")
+HSlider/icons/grabber_disabled = ExtResource("3_mescc")
+HSlider/icons/grabber_highlight = ExtResource("4_2ucx7")
+HSlider/styles/grabber_area = ExtResource("5_c617u")
+HSlider/styles/grabber_area_highlight = ExtResource("6_ypj27")
 HSlider/styles/slider = ExtResource("5_qtij3")
+HSliderY/base_type = &"HSlider"
+HSliderY/icons/grabber = ExtResource("8_403hh")
+HSliderY/icons/grabber_disabled = ExtResource("8_403hh")
+HSliderY/icons/grabber_highlight = ExtResource("9_lq8pv")
+HSliderY/styles/grabber_area = ExtResource("10_gccuq")
+HSliderY/styles/grabber_area_highlight = ExtResource("11_icrlj")
+HSliderY/styles/slider = ExtResource("5_qtij3")
 Label/font_sizes/font_size = 19
 Panel1/base_type = &"Panel"
-Panel1/styles/panel = ExtResource("1_few6y")
+Panel1/styles/panel = ExtResource("7_yql1f")
 Panel2/base_type = &"Panel"
-Panel2/styles/panel = SubResource("StyleBoxTexture_nvr8x")
-PanelContainer/styles/panel = ExtResource("1_few6y")
+Panel2/styles/panel = ExtResource("9_vahsb")
+Panel3/base_type = &"Panel"
+Panel3/styles/panel = ExtResource("10_aq0ev")
+PanelContainer/styles/panel = ExtResource("7_yql1f")
