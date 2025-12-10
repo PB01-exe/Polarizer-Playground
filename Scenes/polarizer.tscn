@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d30vawdnfr7aa"]
+[gd_scene load_steps=8 format=3 uid="uid://d30vawdnfr7aa"]
 
 [ext_resource type="PackedScene" uid="uid://b743rgu7jee40" path="res://Models/Group 4/pipe_ringSupport.glb" id="1_h0ydq"]
 [ext_resource type="Script" path="res://Scripts/polarizer.gd" id="1_kq8ld"]
 [ext_resource type="PackedScene" uid="uid://3d36vivbsw16" path="res://Models/Other/Hexagon_2.gltf" id="2_4o23f"]
+[ext_resource type="FontFile" uid="uid://b2sar34r2lonh" path="res://UI/Fonts/Kenney Future.ttf" id="4_b7swr"]
+[ext_resource type="PackedScene" uid="uid://dl2hlu0r7dov8" path="res://Models/Group 1/computer.glb" id="5_pl0xl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s3gd"]
 transparency = 1
@@ -27,3 +29,25 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.99, 0, 0, 0)
 [node name="screen" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("CylinderMesh_m4308")
+
+[node name="computer1" parent="." instance=ExtResource("5_pl0xl")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0.5, -0.9, 0)
+
+[node name="Label3D1" type="Label3D" parent="computer1"]
+transform = Transform3D(1, -7.44097e-17, 3.39079e-15, 0, 0.984808, 0.173648, 3.55271e-15, -0.173648, 0.984808, 0.0353274, 0.434449, 0.0387199)
+pixel_size = 0.003
+outline_modulate = Color(1, 1, 1, 1)
+font = ExtResource("4_b7swr")
+font_size = 100
+outline_size = 10
+
+[node name="computer2" parent="." instance=ExtResource("5_pl0xl")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -0.5, -0.9, 0)
+
+[node name="Label3D2" type="Label3D" parent="computer2"]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0.0353274, 0.434449, 0.03872)
+pixel_size = 0.003
+outline_modulate = Color(1, 1, 1, 1)
+font = ExtResource("4_b7swr")
+font_size = 100
+outline_size = 10

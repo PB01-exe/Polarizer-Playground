@@ -1,15 +1,23 @@
 extends Node
 const distance_between_polarizers = 2
 var polarizer_tracker = 0
+var start_screen = true
+const cam_sensitivity = 0.1
+const cam_min_position = 2.5
+const cam_max_position = 13.5
+var intensity = 10
 var polarizers = []
 var dials = []
 var waves = []
-var intensity
+var ui
+var start
 var polarizer_scene
 var dial_scene
 var wave_scene
 var laser
 var analyzer
+var camera
+var start_camera
 var polarizer_ui
 var output_label
 var analysis_label
@@ -19,27 +27,32 @@ var percent_label
 func _ready():
 	polarizer_scene = load("res://Scenes/polarizer.tscn")
 	dial_scene = load("res://Scenes/angle_control.tscn")
-	wave_scene = load("res://Scenes/wave.tscn")
+	wave_scene = load("res://Scenes/wave_pair.tscn")
+	ui = load("res://Scenes/ui.tscn").instantiate()
+	start = load("res://Scenes/start.tscn").instantiate()
 	laser = get_node("Laser")
 	analyzer = get_node("Analyzer")
-	polarizer_ui = get_node("UI/PolarizerControls/Panel/Margin/VBox")
-	output_label = get_node("UI/IntensityControls/InfoPanel/OutputValue")
-	analysis_label = get_node("UI/IntensityControls/InfoPanel/AnalysisValue")
-	percent_label = get_node("UI/IntensityControls/InfoPanel/PercentValue")
+	camera = get_node("Camera3D1")
+	start_camera = get_node("Camera3D2")
+
+	add_child(start)
+	start_camera.make_current()
 	
-	set_output(10)
 	update_laser_path()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_pressed("D"):
+		camera.position.x = clamp(camera.position.x + sign(camera.position.z)*cam_sensitivity, cam_min_position, cam_max_position)
+	if Input.is_action_pressed("A"):
+		camera.position.x = clamp(camera.position.x - sign(camera.position.z)*cam_sensitivity, cam_min_position, cam_max_position)
 	
 
 func update_laser_path():
 	
-	for wave in waves:
-		wave.queue_free()
-	waves.clear()
+	for i in range(2, waves.size()):
+		waves[i].queue_free()
+	waves = waves.slice(0, 2)
 	
 	var positions = []
 	var angles = []
@@ -50,7 +63,7 @@ func update_laser_path():
 		
 	positions.append(analyzer.position)
 	
-	for i in range(4):
+	for i in range(2):
 		var new_wave = create_wave(laser.position, positions[0], (PI/2)*i)
 		add_child(new_wave)
 		
@@ -69,16 +82,22 @@ func update_laser_path():
 			amplitude *= amplitude_ratio
 			angle = angles[i]
 	
-	set_output()
+	if !start_screen:
+		set_output()
 
 
-func create_wave(start, end, angle, amplitude=1):
+func create_wave(start_pos, end_pos, angle, amplitude=1):
 	var wave = wave_scene.instantiate()
 	waves.append(wave)
 	
 	wave.rotate(Vector3(1, 0, 0), angle)
-	wave.position = (start+end)/2
-	wave.get_active_material(0).set_shader_parameter("scale", amplitude)
+	wave.position = (start_pos+end_pos)/2
+	
+	var wave1 = wave.get_node("Wave1")
+	var wave2 = wave.get_node("Wave2")
+	
+	wave2.set_surface_override_material(0, wave1.get_active_material(0))
+	wave1.get_active_material(0).set_shader_parameter("scale", amplitude)
 	
 	return wave
 
@@ -89,7 +108,7 @@ func add_polarizer():
 		polarizer_tracker += 1
 		
 		var new_polarizer = polarizer_scene.instantiate()
-		new_polarizer.setup((polarizers.size()+1)*distance_between_polarizers+laser.position.x, 0, self)
+		new_polarizer.setup((polarizers.size()+1)*distance_between_polarizers+laser.position.x, 0, self, polarizer_tracker)
 		
 		polarizers.append(new_polarizer)
 		add_child(new_polarizer)
@@ -126,7 +145,7 @@ func remove_polarizer():
 
 func set_output(value=intensity):
 	intensity = value
-	output_label.text = str(value)
+	output_label.text = str(intensity)
 	
 	var final_intensity = intensity
 	
@@ -139,7 +158,42 @@ func set_output(value=intensity):
 	
 	analysis_label.text = str((round(final_intensity*100))/100)
 	percent_label.text = str(round((final_intensity/intensity)*100))
+	
+
+func switch_scene():
+	
+	if start_screen:
+		
+		remove_child(start)
+		add_child(ui)
+		
+		polarizer_ui = get_node("UI/PolarizerControls/Panel/Margin/VBox")
+		output_label = get_node("UI/IntensityControls/InfoPanel/OutputValue")
+		analysis_label = get_node("UI/IntensityControls/InfoPanel/AnalysisValue")
+		percent_label = get_node("UI/IntensityControls/InfoPanel/PercentValue")
+		
+		set_output()
+		camera.make_current()
+		start_screen = false
+		
+	else:
+		
+		remove_child(ui)
+		add_child(start)
+		
+		start_camera.make_current()
+		start_screen = true
 
 
-func _on_output_slider_value_changed(value):
-	set_output(value)
+func _input(event):
+	
+	if !start_screen:
+		
+		if event.is_action_pressed("Q"):
+			for element in get_node("UI").get_children():
+				var center = (get_viewport().size.x - element.size.x)/2
+				element.position.x = center + (center - element.position.x)
+		
+		if event.is_action_pressed("Q"):
+			camera.position.z *= -1
+			camera.rotation.y = PI-camera.rotation.y

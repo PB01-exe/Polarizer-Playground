@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxhy5vwdwyvy0"]
+
+[ext_resource type="Texture2D" uid="uid://d1ypcmuwpmx4r" path="res://UI/Assets/title.png" id="1_ox552"]
+[ext_resource type="Script" path="res://Scripts/start.gd" id="1_wc2qe"]
+[ext_resource type="Theme" uid="uid://cs4nunof204na" path="res://UI/Themes/theme.tres" id="2_0nhou"]
+[ext_resource type="Texture2D" uid="uid://cmxsmbp5w0new" path="res://UI/Assets/keyboard_a_outline.png" id="3_g4oo0"]
+[ext_resource type="Texture2D" uid="uid://debevqdxyf8qa" path="res://UI/Assets/keyboard_d_outline.png" id="4_iv617"]
+[ext_resource type="Texture2D" uid="uid://djrpbqshhw86d" path="res://UI/Assets/keyboard_q_outline.png" id="5_b2ift"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wc2qe")
+
+[node name="TitleShadow" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 104.0
+offset_top = 15.0
+offset_right = 2024.0
+offset_bottom = 1095.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ox552")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 7.0
+offset_right = 2016.0
+offset_bottom = 1087.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ox552")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 311.0
+offset_right = 513.0
+offset_bottom = 391.0
+theme = ExtResource("2_0nhou")
+theme_override_colors/font_hover_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_focus_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_font_sizes/font_size = 40
+text = "START"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 417.0
+offset_right = 515.0
+offset_bottom = 652.0
+theme = ExtResource("2_0nhou")
+theme_type_variation = &"Panel4"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 5.0
+offset_right = 352.0
+offset_bottom = 28.0
+text = "Controls"
+
+[node name="A" type="TextureRect" parent="."]
+modulate = Color(0.588235, 0.588235, 0.639216, 1)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 457.0
+offset_right = 398.0
+offset_bottom = 585.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_g4oo0")
+
+[node name="Label" type="Label" parent="A"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 32.0
+offset_right = 468.0
+offset_bottom = 99.0
+theme = ExtResource("2_0nhou")
+theme_override_font_sizes/font_size = 26
+text = "Move Camera Away From Laser"
+autowrap_mode = 2
+
+[node name="D" type="TextureRect" parent="."]
+modulate = Color(0.588235, 0.588235, 0.639216, 1)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 514.0
+offset_right = 398.0
+offset_bottom = 642.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_iv617")
+
+[node name="Label" type="Label" parent="D"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 32.0
+offset_right = 468.0
+offset_bottom = 99.0
+theme = ExtResource("2_0nhou")
+theme_override_font_sizes/font_size = 26
+text = "Move Camera Towards Laser"
+autowrap_mode = 2
+
+[node name="Q" type="TextureRect" parent="."]
+modulate = Color(0.588235, 0.588235, 0.639216, 1)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 573.0
+offset_right = 398.0
+offset_bottom = 701.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_b2ift")
+
+[node name="Label" type="Label" parent="Q"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 32.0
+offset_right = 468.0
+offset_bottom = 99.0
+theme = ExtResource("2_0nhou")
+theme_override_font_sizes/font_size = 26
+text = "Switch Camera View"
+autowrap_mode = 2
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

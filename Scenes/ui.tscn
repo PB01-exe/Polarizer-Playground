@@ -1,0 +1,234 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds2udlhi4bw4k"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_bspjr"]
+[ext_resource type="Theme" uid="uid://cs4nunof204na" path="res://UI/Themes/theme.tres" id="1_m67lt"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_bspjr")
+
+[node name="AddPolarizerButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 542.0
+offset_right = 822.0
+offset_bottom = 60.0
+theme = ExtResource("1_m67lt")
+theme_override_colors/font_hover_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_focus_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_font_sizes/font_size = 18
+text = "Add A New Polarizer"
+
+[node name="RemovePolarizerButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 60.0
+offset_right = 822.0
+offset_bottom = 120.0
+theme = ExtResource("1_m67lt")
+theme_override_colors/font_hover_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_focus_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_font_sizes/font_size = 18
+text = "Remove A POLARIZER"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_top = 417.0
+offset_right = 172.0
+offset_bottom = 470.0
+theme = ExtResource("1_m67lt")
+theme_override_colors/font_hover_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_pressed_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_focus_color = Color(0.588235, 0.588235, 0.639216, 1)
+theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
+text = "Back To Menu"
+
+[node name="PolarizerControls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 824.0
+offset_right = 1278.0
+offset_bottom = 40.0
+theme = ExtResource("1_m67lt")
+
+[node name="Panel" type="PanelContainer" parent="PolarizerControls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.421
+anchor_bottom = 0.447
+offset_right = 262.866
+offset_bottom = 102.12
+theme_type_variation = &"Panel1"
+
+[node name="Margin" type="MarginContainer" parent="PolarizerControls/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -15
+
+[node name="VBox" type="VBoxContainer" parent="PolarizerControls/Panel/Margin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PolarizerControls"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 5.0
+offset_right = 352.0
+offset_bottom = 28.0
+text = "Polarizer Control Panel"
+
+[node name="IntensityControls" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 470.0
+offset_right = 411.0
+offset_bottom = 510.0
+theme = ExtResource("1_m67lt")
+
+[node name="InfoPanel" type="Panel" parent="IntensityControls"]
+layout_mode = 0
+offset_right = 411.0
+offset_bottom = 250.0
+theme_type_variation = &"Panel3"
+
+[node name="OutputPanel" type="Panel" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 55.0
+offset_right = 378.0
+offset_bottom = 127.0
+theme = ExtResource("1_m67lt")
+theme_type_variation = &"Panel2"
+
+[node name="OutputSlider" type="HSlider" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 106.0
+offset_right = 250.0
+offset_bottom = 136.0
+theme_type_variation = &"HSliderY"
+min_value = 0.5
+max_value = 20.0
+step = 0.1
+value = 10.0
+
+[node name="OutputLabel" type="Label" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 56.0
+offset_right = 224.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
+text = "Laser Output Intensity"
+autowrap_mode = 2
+
+[node name="OutputValue" type="Label" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 65.0
+offset_right = 376.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OutputUnits" type="Label" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 97.0
+offset_right = 353.0
+offset_bottom = 119.0
+text = "W/m²"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnalysisPanel" type="Panel" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 151.0
+offset_right = 378.0
+offset_bottom = 223.0
+theme = ExtResource("1_m67lt")
+theme_type_variation = &"Panel2"
+
+[node name="AnalysisLabel" type="Label" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 152.0
+offset_right = 153.0
+offset_bottom = 199.0
+theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
+text = "Analyzed Intensity And Ratio"
+autowrap_mode = 2
+
+[node name="PercentPanel" type="Panel" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 151.0
+offset_right = 249.0
+offset_bottom = 223.0
+theme = ExtResource("1_m67lt")
+theme_type_variation = &"Panel2"
+
+[node name="PercentValue" type="Label" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 161.0
+offset_right = 252.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PercentUnits" type="Label" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 193.0
+offset_right = 246.0
+offset_bottom = 215.0
+text = "%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnalysisValue" type="Label" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 161.0
+offset_right = 376.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnalysisUnits" type="Label" parent="IntensityControls/InfoPanel"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 193.0
+offset_right = 353.0
+offset_bottom = 215.0
+text = "W/m²"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="IntensityControls"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 5.0
+offset_right = 147.0
+offset_bottom = 28.0
+theme = ExtResource("1_m67lt")
+text = "Intensity Control Panel"
+
+[connection signal="pressed" from="AddPolarizerButton" to="." method="_on_add_polarizer_button_pressed"]
+[connection signal="pressed" from="RemovePolarizerButton" to="." method="_on_remove_polarizer_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="IntensityControls/InfoPanel/OutputSlider" to="." method="_on_output_slider_value_changed"]

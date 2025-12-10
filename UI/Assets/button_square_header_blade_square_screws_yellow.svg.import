@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvouyb1ofpx1p"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://c3ofblw37j0ym"
+path="res://.godot/imported/button_square_header_blade_square_screws_yellow.svg-a32ab3f50b10f5065c69a57d0c0d968a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://UI/Assets/button_square_header_blade_square_screws_yellow.svg"
+dest_files=["res://.godot/imported/button_square_header_blade_square_screws_yellow.svg-a32ab3f50b10f5065c69a57d0c0d968a.ctex"]
 
 [params]
 

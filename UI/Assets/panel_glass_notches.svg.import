@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvouyb1ofpx1p"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://cu88xiwersq77"
+path="res://.godot/imported/panel_glass_notches.svg-218b8be80fe9a1a3edd154ab24503617.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://UI/Assets/panel_glass_notches.svg"
+dest_files=["res://.godot/imported/panel_glass_notches.svg-218b8be80fe9a1a3edd154ab24503617.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce7r2yetuevi0"]
 
 [ext_resource type="Script" path="res://Scripts/angle_control.gd" id="1_pv86o"]
-[ext_resource type="Theme" uid="uid://cs4nunof204na" path="res://theme.tres" id="1_xl2vr"]
-[ext_resource type="Texture2D" uid="uid://cu88xiwersq77" path="res://panel_glass_notches.svg" id="2_m5wpi"]
+[ext_resource type="Theme" uid="uid://cs4nunof204na" path="res://UI/Themes/theme.tres" id="1_xl2vr"]
+[ext_resource type="Texture2D" uid="uid://cu88xiwersq77" path="res://UI/Assets/panel_glass_notches.svg" id="2_m5wpi"]
 
 [node name="AngleControl" type="Control"]
 custom_minimum_size = Vector2(0, 60)

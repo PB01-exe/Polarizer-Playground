@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://de2qgiuqykmrj"]
+[gd_scene load_steps=14 format=3 uid="uid://de2qgiuqykmrj"]
 
 [ext_resource type="Script" path="res://Scripts/simulator.gd" id="1_wq7ee"]
 [ext_resource type="PackedScene" uid="uid://dpwftr2e0hknp" path="res://Models/Group 2/blaster-b.glb" id="2_0hk3a"]
@@ -7,11 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b6r3vo7grqdkc" path="res://Models/Group 4/gate_complex.glb" id="5_fahvw"]
 [ext_resource type="PackedScene" uid="uid://dxdjahpjaje8t" path="res://Models/Group 1/table-inset.glb" id="6_burto"]
 [ext_resource type="PackedScene" uid="uid://dcsqo5ksygmr0" path="res://Models/Other/Hexagon_1.gltf" id="7_dbl7b"]
-[ext_resource type="Script" path="res://Scripts/camera_3d.gd" id="8_g2vok"]
 [ext_resource type="MeshLibrary" uid="uid://0tvtc31wrmh" path="res://MeshLibraries/floor_library.tres" id="9_yyidw"]
 [ext_resource type="MeshLibrary" uid="uid://chjl1n4ykjlut" path="res://MeshLibraries/wall_library.tres" id="10_qp0jn"]
 [ext_resource type="PackedScene" uid="uid://bikpyd5awjo8o" path="res://Models/Group 1/stairs-small-edges.glb" id="11_xtu3a"]
-[ext_resource type="Theme" uid="uid://cs4nunof204na" path="res://theme.tres" id="12_fy4ia"]
 
 [sub_resource type="Environment" id="Environment_6hdua"]
 adjustment_enabled = true
@@ -68,37 +66,37 @@ mesh = SubResource("CylinderMesh_m4308")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="Light 1" type="OmniLight3D" parent="Overhead Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 light_energy = 0.5
 omni_range = 6.0
 omni_attenuation = 0.0
 
 [node name="Light 2" type="OmniLight3D" parent="Overhead Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
 light_energy = 0.5
 omni_range = 6.0
 omni_attenuation = 0.0
 
 [node name="Light 3" type="OmniLight3D" parent="Overhead Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 1)
 light_energy = 0.5
 omni_range = 6.0
 omni_attenuation = 0.0
 
 [node name="Light 4" type="OmniLight3D" parent="Overhead Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 light_energy = 0.5
 omni_range = 6.0
 omni_attenuation = 0.0
 
 [node name="Light 5" type="OmniLight3D" parent="Overhead Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
 light_energy = 0.5
 omni_range = 6.0
 omni_attenuation = 0.0
 
 [node name="Light 6" type="OmniLight3D" parent="Overhead Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -1)
 light_energy = 0.5
 omni_range = 6.0
 omni_attenuation = 0.0
@@ -112,22 +110,28 @@ transform = Transform3D(-3.49691e-08, 0, 1, 0, 1, 0, -0.8, 0, -4.37114e-08, -4.2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.3)
 
 [node name="Stairs 2" parent="Stairs" instance=ExtResource("11_xtu3a")]
-transform = Transform3D(-0.8, 0, -8.74228e-08, 0, 1, 0, 6.99382e-08, 0, -1, 2, 0.5, 2.25)
+transform = Transform3D(-0.8, 0, -8.74228e-08, 0, 1, 0, 6.99382e-08, 0, -1, 5, 0.5, 2.25)
 
 [node name="stairs-small-edges2" parent="Stairs/Stairs 2" instance=ExtResource("11_xtu3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.3)
 
 [node name="Stairs 3" parent="Stairs" instance=ExtResource("11_xtu3a")]
-transform = Transform3D(0.8, 0, 1.74846e-07, 0, 1, 0, -1.39876e-07, 0, 1, 2, 0.5, -2.25)
+transform = Transform3D(0.8, 0, 1.74846e-07, 0, 1, 0, -1.39876e-07, 0, 1, 5, 0.5, -2.25)
 
 [node name="stairs-small-edges2" parent="Stairs/Stairs 3" instance=ExtResource("11_xtu3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.3)
+
+[node name="Stairs 4" parent="Stairs" instance=ExtResource("11_xtu3a")]
+transform = Transform3D(1.04907e-07, 0, -1, 0, 1, 0, 0.8, 0, 1.31134e-07, 14.25, 0.5, 0)
+
+[node name="stairs-small-edges2" parent="Stairs/Stairs 4" instance=ExtResource("11_xtu3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.3)
 
 [node name="Floor" type="GridMap" parent="."]
 mesh_library = ExtResource("9_yyidw")
 cell_size = Vector3(1, 1, 1)
 data = {
-"cells": PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 2, 65535, 0, 1, 65535, 0, 0, 65535, 0, 3, 65535, 0, 3, 0, 0, 65535, 65535, 0, 65535, 0, 0, 65534, 65535, 0, 65534, 0, 0, 65533, 65535, 0, 65533, 0, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 65534, 0, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 65535, 0, 4, 65534, 0, 4, 0, 0, 4, 1, 0, 5, 65534, 0, 5, 65535, 0, 5, 0, 0, 5, 1, 0, 6, 65534, 0, 6, 65535, 0, 6, 0, 0, 6, 1, 0, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 8, 65534, 0, 8, 65535, 0, 8, 0, 0, 8, 1, 0, 9, 65534, 0, 9, 65535, 0, 9, 0, 0, 9, 1, 0, 10, 65534, 0, 10, 65535, 0, 10, 0, 0, 10, 1, 0, 11, 65534, 0, 11, 65535, 0, 11, 0, 0, 11, 1, 0, 12, 65534, 0, 12, 65535, 0, 12, 0, 0, 12, 1, 0, 13, 65534, 0, 13, 65535, 0, 13, 0, 0, 13, 1, 0, 65531, 0, 0, 65531, 65535, 0, 1, 2, 0, 2, 2, 0, 2, 65533, 0, 1, 65533, 0)
+"cells": PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 2, 65535, 0, 1, 65535, 0, 0, 65535, 0, 3, 65535, 0, 3, 0, 0, 65535, 65535, 0, 65535, 0, 0, 65534, 65535, 0, 65534, 0, 0, 65533, 65535, 0, 65533, 0, 0, 65532, 65535, 0, 65532, 0, 0, 65532, 65534, 0, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 65535, 0, 4, 65534, 0, 4, 0, 0, 4, 1, 0, 5, 65534, 0, 5, 65535, 0, 5, 0, 0, 5, 1, 0, 6, 65534, 0, 6, 65535, 0, 6, 0, 0, 6, 1, 0, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 8, 65534, 0, 8, 65535, 0, 8, 0, 0, 8, 1, 0, 9, 65534, 0, 9, 65535, 0, 9, 0, 0, 9, 1, 0, 10, 65534, 0, 10, 65535, 0, 10, 0, 0, 10, 1, 0, 11, 65534, 0, 11, 65535, 0, 11, 0, 0, 11, 1, 0, 12, 65534, 0, 12, 65535, 0, 12, 0, 0, 12, 1, 0, 13, 65534, 0, 13, 65535, 0, 13, 0, 0, 13, 1, 0, 65531, 0, 0, 65531, 65535, 0, 14, 0, 1441792, 14, 65535, 1441792, 4, 2, 1441792, 5, 2, 1441792, 5, 65533, 1441792, 4, 65533, 1441792)
 }
 
 [node name="Walls" type="GridMap" parent="."]
@@ -136,222 +140,14 @@ cell_size = Vector3(0.25, 1, 0.25)
 cell_center_x = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(65521, 7, 6, 65524, 8, 7, 65532, 8, 7, 65520, 65532, 1441799, 65520, 4, 1441799, 65528, 8, 7, 0, 8, 2, 4, 8, 7, 12, 8, 7, 16, 8, 2, 20, 8, 7, 24, 8, 7, 28, 8, 7, 32, 8, 2, 65521, 65529, 1441798, 65524, 65528, 7, 65528, 65528, 7, 65532, 65528, 7, 0, 65528, 2, 4, 65528, 7, 12, 65528, 7, 16, 65528, 2, 20, 65528, 7, 24, 65528, 7, 28, 65528, 7, 32, 65528, 2, 65520, 0, 1441800, 8, 65528, 655368, 8, 8, 655368)
+"cells": PackedInt32Array(65520, 65532, 1441799, 65520, 0, 1441800, 65520, 4, 1441799, 65521, 65529, 1441798, 65521, 7, 6, 65524, 65528, 7, 65524, 8, 7, 65528, 65528, 7, 65528, 8, 7, 65532, 65528, 7, 65532, 8, 7, 0, 65528, 2, 0, 8, 2, 4, 65528, 7, 4, 8, 7, 8, 65528, 7, 8, 8, 7, 12, 65528, 7, 12, 8, 7, 16, 65528, 7, 16, 8, 7, 20, 65528, 8, 20, 8, 8, 24, 65528, 7, 24, 8, 7, 28, 65528, 7, 28, 8, 7, 32, 65528, 7, 32, 8, 7, 36, 65528, 7, 36, 8, 7, 40, 65528, 2, 40, 8, 2, 44, 65528, 7, 44, 8, 7, 48, 65528, 7, 48, 8, 7, 52, 65528, 7, 52, 8, 7, 55, 65529, 655366, 55, 7, 1048582, 56, 65532, 1048583, 56, 0, 1441800, 56, 4, 1048583, 196592, 4, 1310720, 196596, 8, 131072, 196600, 8, 131072, 196604, 8, 131072, 131076, 8, 131072, 131080, 8, 131072, 131084, 8, 131072, 131088, 8, 131072, 131092, 8, 131072, 131096, 8, 131072, 131100, 8, 131072, 131104, 8, 131072, 131108, 8, 131072, 131116, 8, 131072, 131120, 8, 131072, 131124, 8, 131072, 131128, 4, 1179648, 196593, 7, 1179653, 131127, 7, 131077, 131128, 65532, 1179648, 131127, 65529, 1310725, 131124, 65528, 524288, 131120, 65528, 524288, 131116, 65528, 524288, 131108, 65528, 524288, 131104, 65528, 524288, 131100, 65528, 524288, 131096, 65528, 524288, 131092, 65528, 524288, 131088, 65528, 524288, 131084, 65528, 524288, 131080, 65528, 524288, 131076, 65528, 524288, 196604, 65528, 524288, 196600, 65528, 524288, 196596, 65528, 524288, 196593, 65529, 524293, 196592, 65532, 1310720, 196592, 0, 1179648, 131128, 0, 1179648, 131072, 65528, 524289, 131072, 8, 524289, 131112, 8, 524289, 131112, 65528, 524289)
 }
-metadata/_editor_floor_ = Vector3(0, 0, 0)
+metadata/_editor_floor_ = Vector3(0, 2, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.766045, -0.413176, 0.492404, 0, 0.766044, 0.642788, -0.642787, -0.492404, 0.586824, 2.5, 4, 2.5)
-fov = 45.0
-script = ExtResource("8_g2vok")
+[node name="Camera3D1" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.454519, 0.541675, 0, 0.766044, 0.642788, -0.707107, -0.454519, 0.541675, 2.5, 3.5, 1.85)
+fov = 50.0
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-
-[node name="AddPolarizerButton" type="Button" parent="UI"]
-layout_mode = 0
-offset_left = 542.0
-offset_right = 822.0
-offset_bottom = 60.0
-theme = ExtResource("12_fy4ia")
-theme_override_colors/font_hover_color = Color(0.588235, 0.588235, 0.639216, 1)
-theme_override_colors/font_pressed_color = Color(0.588235, 0.588235, 0.639216, 1)
-theme_override_colors/font_focus_color = Color(0.588235, 0.588235, 0.639216, 1)
-theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
-theme_override_font_sizes/font_size = 18
-text = "Add A New Polarizer"
-
-[node name="RemovePolarizerButton2" type="Button" parent="UI"]
-layout_mode = 0
-offset_left = 542.0
-offset_top = 60.0
-offset_right = 822.0
-offset_bottom = 120.0
-theme = ExtResource("12_fy4ia")
-theme_override_colors/font_hover_color = Color(0.588235, 0.588235, 0.639216, 1)
-theme_override_colors/font_pressed_color = Color(0.588235, 0.588235, 0.639216, 1)
-theme_override_colors/font_focus_color = Color(0.588235, 0.588235, 0.639216, 1)
-theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
-theme_override_font_sizes/font_size = 18
-text = "Remove A POLARIZER"
-
-[node name="PolarizerControls" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 824.0
-offset_right = 864.0
-offset_bottom = 40.0
-theme = ExtResource("12_fy4ia")
-
-[node name="Panel" type="PanelContainer" parent="UI/PolarizerControls"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.421
-anchor_bottom = 0.447
-offset_right = 437.16
-offset_bottom = 102.12
-theme_type_variation = &"Panel1"
-
-[node name="Margin" type="MarginContainer" parent="UI/PolarizerControls/Panel"]
-layout_mode = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = -15
-
-[node name="VBox" type="VBoxContainer" parent="UI/PolarizerControls/Panel/Margin"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/PolarizerControls"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 5.0
-offset_right = 352.0
-offset_bottom = 28.0
-text = "Polarizer Control Panel"
-
-[node name="IntensityControls" type="Control" parent="UI"]
-anchors_preset = 0
-offset_top = 470.0
-offset_right = 40.0
-offset_bottom = 510.0
-theme = ExtResource("12_fy4ia")
-
-[node name="InfoPanel" type="Panel" parent="UI/IntensityControls"]
-layout_mode = 0
-offset_right = 411.0
-offset_bottom = 250.0
-theme_type_variation = &"Panel3"
-
-[node name="OutputPanel" type="Panel" parent="UI/IntensityControls/InfoPanel"]
-layout_mode = 0
-offset_left = 263.0
-offset_top = 55.0
-offset_right = 378.0
-offset_bottom = 127.0
-theme = ExtResource("12_fy4ia")
-theme_type_variation = &"Panel2"
-
-[node name="OutputSlider" type="HSlider" parent="UI/IntensityControls/InfoPanel"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 106.0
-offset_right = 250.0
-offset_bottom = 136.0
-theme_type_variation = &"HSliderY"
-min_value = 0.5
-max_value = 20.0
-step = 0.1
-value = 10.0
-
-[node name="OutputLabel" type="Label" parent="UI/IntensityControls/InfoPanel"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 56.0
-offset_right = 224.0
-offset_bottom = 103.0
-theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
-text = "Laser Output Intensity"
-autowrap_mode = 2
-
-[node name="OutputValue" type="Label" parent="UI/IntensityControls/InfoPanel"]
-layout_mode = 0
-offset_left = 276.0
-offset_top = 65.0
-offset_right = 376.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OutputUnits" type="Label" parent="UI/IntensityControls/InfoPanel"]
-offset_left = 293.0
-offset_top = 97.0
-offset_right = 353.0
-offset_bottom = 119.0
-text = "W/m²"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="AnalysisPanel" type="Panel" parent="UI/IntensityControls/InfoPanel"]
-layout_mode = 0
-offset_left = 263.0
-offset_top = 151.0
-offset_right = 378.0
-offset_bottom = 223.0
-theme = ExtResource("12_fy4ia")
-theme_type_variation = &"Panel2"
-
-[node name="AnalysisLabel" type="Label" parent="UI/IntensityControls/InfoPanel"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 152.0
-offset_right = 153.0
-offset_bottom = 199.0
-theme_override_colors/font_color = Color(0.588235, 0.588235, 0.639216, 1)
-text = "Analyzed Intensity And Ratio"
-autowrap_mode = 2
-
-[node name="PercentPanel" type="Panel" parent="UI/IntensityControls/InfoPanel"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 151.0
-offset_right = 249.0
-offset_bottom = 223.0
-theme = ExtResource("12_fy4ia")
-theme_type_variation = &"Panel2"
-
-[node name="PercentValue" type="Label" parent="UI/IntensityControls/InfoPanel"]
-offset_left = 177.0
-offset_top = 161.0
-offset_right = 252.0
-offset_bottom = 196.0
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PercentUnits" type="Label" parent="UI/IntensityControls/InfoPanel"]
-offset_left = 186.0
-offset_top = 193.0
-offset_right = 246.0
-offset_bottom = 215.0
-text = "%"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="AnalysisValue" type="Label" parent="UI/IntensityControls/InfoPanel"]
-offset_left = 276.0
-offset_top = 161.0
-offset_right = 376.0
-offset_bottom = 196.0
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnalysisUnits" type="Label" parent="UI/IntensityControls/InfoPanel"]
-offset_left = 293.0
-offset_top = 193.0
-offset_right = 353.0
-offset_bottom = 215.0
-text = "W/m²"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Label" type="Label" parent="UI/IntensityControls"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 5.0
-offset_right = 147.0
-offset_bottom = 28.0
-theme = ExtResource("12_fy4ia")
-text = "Intensity Control Panel"
-
-[connection signal="pressed" from="UI/AddPolarizerButton" to="." method="add_polarizer"]
-[connection signal="pressed" from="UI/RemovePolarizerButton2" to="." method="remove_polarizer"]
-[connection signal="value_changed" from="UI/IntensityControls/InfoPanel/OutputSlider" to="." method="_on_output_slider_value_changed"]
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 2.18557e-08, -3.78552e-08, -3.5, 2.5, -1)
+fov = 50.0

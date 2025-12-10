@@ -1,6 +1,6 @@
 shader_type spatial;
 render_mode cull_disabled;
-const float SPEED = 0.50;
+const float SPEED = 0.05;
 const float K = 2.0*PI;
 const float A = 0.20;
 const vec3 C = vec3(196.0, 73.0, 57.0);
